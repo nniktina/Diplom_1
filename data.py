@@ -1,7 +1,7 @@
 import sys
 import random
 import string
-import praktikum.ingredient_types
+import ingredient_types
 
 bun_test_data = [["Флюоресцентная булка R2-D3", 988.025],
                  ["Краторная булка N-200i", 1255],
@@ -17,5 +17,5 @@ bun_test_data = [["Флюоресцентная булка R2-D3", 988.025],
                  ["@&%$*()", 0]]
 
 ingredient_test_data = [
-    [praktikum.ingredient_types.INGREDIENT_TYPE_FILLING, "Мясо бессмертных моллюсков Protostomia", 1337],
-    [praktikum.ingredient_types.INGREDIENT_TYPE_SAUCE, "Соус Spicy-X", 90.5]]
+    [ingredient_types.INGREDIENT_TYPE_FILLING, "Мясо бессмертных моллюсков Protostomia", 1337],
+    [ingredient_types.INGREDIENT_TYPE_SAUCE, "Соус Spicy-X", 90.5]]

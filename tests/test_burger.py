@@ -1,8 +1,8 @@
-from praktikum.ingredient import Ingredient
+import pytest
+
+from praktikum_data.burger import Burger
 from tests.mocks import MockData
-from praktikum.burger import Burger
-from praktikum.database import Database
-import data
+from database import Database
 
 
 class TestBurger:

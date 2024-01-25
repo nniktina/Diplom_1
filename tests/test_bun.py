@@ -1,5 +1,5 @@
 import pytest
-from praktikum.bun import Bun
+from praktikum_data.bun import Bun
 import data
 
 
