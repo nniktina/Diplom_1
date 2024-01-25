@@ -2,6 +2,7 @@ from praktikum.ingredient import Ingredient
 from tests.mocks import MockData
 from praktikum.burger import Burger
 from praktikum.database import Database
+import data
 
 
 class TestBurger:
@@ -28,7 +29,26 @@ class TestBurger:
     def test_burger_move_ingredient(self):
         burger = Burger()
         database = Database()
-        burger.add_ingredient(database.ingredients[0])
-        burger.add_ingredient(database.ingredients[3])
+        burger.add_ingredient(database.available_ingredients()[0])
+        burger.add_ingredient(database.available_ingredients()[1])
         burger.move_ingredient(0, 1)
-        assert burger.ingredients[1].name == database.ingredients[0].name
+        expected_name = database.available_ingredients()[0].name
+        assert burger.ingredients[1].name == expected_name
+
+    def test_burger_get_price(self):
+        burger = Burger()
+        mocked_bun = MockData.mock_bun()
+        mocked_ingredient = MockData.mock_ingredient()
+        burger.set_buns(mocked_bun)
+        burger.add_ingredient(mocked_ingredient)
+        expected_price = (mocked_bun.get_price() * 2) + mocked_ingredient.get_price()
+        assert burger.get_price() == expected_price
+
+    def test_burger_get_receipt(self):
+        burger = Burger()
+        mocked_bun = MockData.mock_bun()
+        mocked_ingredient = MockData.mock_ingredient()
+        burger.set_buns(mocked_bun)
+        burger.add_ingredient(mocked_ingredient)
+        result = burger.get_receipt()
+        assert result == MockData.mocked_burger_receipt
