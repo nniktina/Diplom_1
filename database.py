@@ -1,14 +1,10 @@
 from typing import List
-
-from praktikum import Bun
-from praktikum import Ingredient
+from praktikum_data.bun import Bun
+from praktikum_data.ingredient import Ingredient
 from ingredient_types import INGREDIENT_TYPE_SAUCE, INGREDIENT_TYPE_FILLING
 
 
 class Database:
-    """
-    Класс с методами по работе с базой данных.
-    """
 
     def __init__(self):
         self.buns: List[Bun] = []
