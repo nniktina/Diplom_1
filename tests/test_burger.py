@@ -1,6 +1,6 @@
 from praktikum_data.burger import Burger
 from tests.mocks import MockData
-from database import Database
+from praktikum_data.database import Database
 
 
 class TestBurger:
